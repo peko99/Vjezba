@@ -13,7 +13,6 @@ typedef struct _student{
     int bodovi_aps;
     float bodovi_rel;
 
-    struct _student* next;
 }Student;
 
 int countRows(char*);
