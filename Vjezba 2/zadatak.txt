@@ -1,0 +1,13 @@
+Definirati strukturu osoba (ime, prezime, godina rođenja) i napisati program koji:
+a) dinamički dodaje novi element na početak liste,
+b) ispisuje listu,
+c) dinamički dodaje novi element na kraj liste,
+d) pronalazi element u listi (po prezimenu),
+e) briše određeni element iz liste,
+U zadatku se ne smiju koristiti globalne varijable
+
+a) dinamički dodaje novi element iza određenog elementa,
+b) dinamički dodaje novi element ispred određenog elementa,
+c) sortira listu po prezimenima osoba,
+d) upisuje listu u datoteku,
+e) čita listu iz datoteke.
