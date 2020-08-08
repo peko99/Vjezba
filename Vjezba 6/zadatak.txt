@@ -1,0 +1,4 @@
+. Napisati program koji pomoću vezanih listi simulira rad:
+a) stoga,
+b) reda.
+Napomena: Funkcija "push" sprema cijeli broj, slučajno generirani u opsegu od 10 -100.

@@ -1,0 +1,2 @@
+Napisati program koji iz datoteke čita postfiks izraz i zatim stvara stablo proračuna. Iz
+gotovog stabla proračuna upisati u datoteku infiks izraz
