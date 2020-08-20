@@ -16,7 +16,8 @@ Stablo* Menu(Stablo*);
 Stablo* insertNew(Stablo*, int);
 int printTree(Stablo*);
 Stablo* searchTree(Stablo*, int);
-Stablo* deleteElement(Stablo*, int);
+Stablo* deleteElement(Stablo*, Stablo*);
+Stablo* findSmallest(Stablo*);
 
 int main()
 {
@@ -51,6 +52,9 @@ Stablo* Menu(Stablo* root)
     Stablo* element = (Stablo*)malloc(sizeof(Stablo));
     element->left = NULL;
     element->right = NULL;
+    Stablo* del = (Stablo*)malloc(sizeof(Stablo));
+    del->right = NULL;
+    del->left = NULL;
 
     printf("\n--> ");
     scanf(" %d", &izbor);
@@ -77,7 +81,10 @@ Stablo* Menu(Stablo* root)
     case 4:
         printf("\nKoji element zelite izbrisati? ");
         scanf(" %d", &brisi);
-        root = deleteElement(root, brisi);
+        del = searchTree(root, brisi);
+        if(del == NULL)
+            return root;        
+        root = deleteElement(root, del);
         break;
     case 5:
         printMenu();
@@ -136,4 +143,50 @@ Stablo* searchTree(Stablo* root, int broj)
 
     else if (broj == root->element)
         return root;
+}
+
+
+Stablo* deleteElement(Stablo* root, Stablo* del)
+{
+    Stablo* pomocna = root;
+    Stablo* temp = NULL;
+
+    if(pomocna == NULL)
+        return NULL;
+
+    else if(pomocna->element > del->element)
+        pomocna->left = deleteElement(pomocna->left, del);
+
+    else if(pomocna->element < del->element)
+        pomocna->right = deleteElement(pomocna->right, del);
+
+    else if(pomocna->left && pomocna->right){
+        temp = findSmallest(pomocna->right);
+        pomocna->element = temp->element;
+        pomocna->right = deleteElement(pomocna->right, pomocna);
+    }
+
+    else{
+        temp = pomocna;
+
+        if(pomocna->left == NULL)
+            pomocna = pomocna->right;
+        else
+            pomocna = pomocna->left;
+
+        free(temp);       
+    }
+
+    return pomocna;
+}
+
+Stablo* findSmallest(Stablo* root)
+{
+    if(root == NULL)
+        return NULL;
+
+    else if(root->left == NULL)
+        return root;
+
+    return findSmallest(root->left);
 }
