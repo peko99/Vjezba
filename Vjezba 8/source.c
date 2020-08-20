@@ -70,5 +70,5 @@ Stablo* findLast(Stablo* pocetak)
 
 int makeDirectory(Stablo* currentFile)
 {
-
+    Stablo* temp;
 }
