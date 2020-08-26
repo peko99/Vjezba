@@ -1,0 +1,7 @@
+Napisati program koji za tri različita predmeta čita ime i prezime studenta te njegovu ocjenu. Podaci o
+svakom predmetu se nalaze u odvojenoj datoteci i iz svake datoteke je potrebno kreirati vezanu listu i
+ispisati je.
+a) Nakon toga potrebno je kreirati novu listu koja sadrži imena studenata koji su položili sva tri
+predmeta.
+b) Nadopuniti zadatak pod a) tako da se ispiše nova vezana lista koja osim što sadrži imena
+studenata, sadrži i njihovu prosječnu ocjenu iz ta tri predmeta. 
